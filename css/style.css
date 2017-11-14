@@ -1,0 +1,345 @@
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-y: hidden;
+  background-image: url("../img/library1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-family: 'Jura', sans-serif; }
+
+#blackCloak {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3); }
+
+h1 {
+  text-align: center;
+  display: inline-block;
+  color: white;
+  margin: auto;
+  width: 70%; }
+
+.inline {
+  display: inline-block; }
+
+.clear {
+  clear: both; }
+
+label, input {
+  display: block;
+  margin-bottom: 10px;
+  border: 0; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1; }
+
+#login {
+  background-image: url("../img/library2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  #login form {
+    width: 200px;
+    margin: auto;
+    margin-top: 23%; }
+  #login label {
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    width: 170px; }
+  #login label:nth-of-type(2) {
+    margin-top: 20px; }
+  #login input {
+    margin: auto; }
+
+#login input[type='submit'] {
+  margin: auto;
+  background-color: #3FB8AF;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 20px; }
+
+#error {
+  color: black;
+  background-color: white;
+  border: 2px red solid;
+  padding: 5px;
+  margin-top: 15px;
+  width: 200px; }
+
+#sidebarBlock {
+  padding: 5px;
+  color: white;
+  display: inline-block; }
+  #sidebarBlock h2 {
+    margin: 0;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px; }
+
+#listCat {
+  margin: auto;
+  list-style-type: none;
+  padding: 0;
+  display: none;
+  position: absolute;
+  z-index: 9; }
+  #listCat li {
+    font-size: 20px;
+    padding-top: 15px;
+    border-bottom: 1px white dotted;
+    padding-right: 10px; }
+  #listCat li:hover, #listCat .selected {
+    background-color: white;
+    border-bottom: 1px black dotted;
+    color: black; }
+  #listCat .important:hover {
+    background-color: transparent;
+    border-bottom: 1px white dotted;
+    color: white; }
+  #listCat .edit, #listCat .supp {
+    width: 20px;
+    position: absolute; }
+  #listCat .supp {
+    right: 5px; }
+  #listCat input {
+    border: 1px solid black;
+    display: inline-block;
+    color: black; }
+  #listCat p {
+    margin: 0;
+    display: inline-block; }
+
+#newCat img {
+  width: 20px;
+  margin-left: 10px; }
+
+main {
+  width: calc(100% - 50px);
+  height: 100%;
+  margin: auto; }
+
+.timelineName {
+  position: absolute;
+  right: 0;
+  color: white; }
+
+.timeline {
+  height: 3px;
+  position: relative;
+  width: 100%;
+  margin-top: 100px; }
+
+.timeline:nth-child(odd) {
+  background-color: #660033; }
+
+.timeline:nth-child(even) {
+  background-color: #cccc00; }
+
+.dot, .endingDot {
+  border-radius: 100%;
+  background-color: white;
+  position: absolute;
+  bottom: -2.5px; }
+
+.endingDot {
+  border: lightgreen solid 3px;
+  width: 10px;
+  height: 10px; }
+
+.dot {
+  border: white solid 5px;
+  width: 0; }
+
+.periodLine {
+  border: 3px dotted lightgreen;
+  position: absolute;
+  z-index: 8;
+  bottom: -1.5px; }
+
+#addLightbox, #lightbox, #updateLightbox {
+  width: calc(100% - 2 * 5% - 2 * 15px - 2 * 5px);
+  height: calc(100% - 2 * 5% - 2 * 15px - 2 * 5px);
+  padding: 15px;
+  position: absolute;
+  top: 5%;
+  margin: 0 5%;
+  z-index: 10;
+  overflow-y: auto; }
+
+#lightboxOverlay {
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  background-color: #777777;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  display: none; }
+
+#lightbox, #updateLightbox {
+  background-color: black;
+  color: white;
+  border: 5px solid white; }
+  #lightbox img, #updateLightbox img {
+    float: right;
+    max-width: 250px;
+    margin-left: 15px; }
+  #lightbox button, #lightbox input[type='submit'], #updateLightbox button, #updateLightbox input[type='submit'] {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px;
+    float: right;
+    margin-left: 10px; }
+
+#lightbox {
+  text-align: justify; }
+  #lightbox h1 {
+    margin-top: 0;
+    text-align: left; }
+  #lightbox p {
+    line-height: 30px;
+    font-size: 17px; }
+
+#addLightbox {
+  display: none;
+  background-color: white;
+  color: black;
+  border: 5px solid black; }
+  #addLightbox h1 {
+    text-align: center;
+    color: black;
+    width: 100%;
+    margin-bottom: 20px; }
+  #addLightbox form {
+    margin: auto; }
+  #addLightbox textarea {
+    width: 100%;
+    display: block; }
+  #addLightbox #insertStartingDay, #addLightbox #insertStartingMonth, #addLightbox #insertStartingYear, #addLightbox #insertEndingDay, #addLightbox #insertEndingMonth, #addLightbox #insertEndingYear {
+    display: inline-block; }
+  #addLightbox #left label:nth-of-type(2), #addLightbox #right label:nth-of-type(1), #addLightbox #right label:nth-of-type(2) {
+    margin-top: 30px; }
+  #addLightbox select {
+    margin: 0 20px;
+    border: 0; }
+  #addLightbox #insertCategories {
+    margin: 0;
+    padding: 10px;
+    width: 250px;
+    height: 120px; }
+  #addLightbox input, #addLightbox select {
+    border-bottom: 1px dashed grey; }
+  #addLightbox input[type='submit'] {
+    background-color: #3FB8AF;
+    color: white;
+    padding: 8px;
+    width: 100px;
+    border: 0;
+    margin: auto;
+    margin-top: 50px; }
+  #addLightbox textarea, #addLightbox #insertCategories {
+    border: 1px dashed grey; }
+  #addLightbox #left {
+    float: left;
+    width: 50%; }
+  #addLightbox #right {
+    float: right;
+    width: 45%; }
+  #addLightbox #leftInnerBlock, #addLightbox #rightInnerBlock {
+    margin: auto; }
+
+#insertDtartingDateBlock input, #insertEndingDateBlock input {
+  display: inline-block; }
+
+#startingDateBlock label:nth-of-type(1) {
+  margin-top: 0 !important; }
+
+#addIcon {
+  width: 50px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: 2px solid white;
+  border-radius: 50%; }
+
+#updateLightbox {
+  display: none; }
+  #updateLightbox input[type='file'] {
+    display: block;
+    margin-top: 15px; }
+  #updateLightbox #updateTitle {
+    font-size: 2em;
+    margin-bottom: 0.67em;
+    display: inline-block; }
+  #updateLightbox textarea {
+    padding: 10px;
+    padding-bottom: 0; }
+  #updateLightbox #dateSection input, #updateLightbox select, #updateLightbox p {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+  #updateLightbox #updateStartingDay, #updateLightbox #updateEndingDay {
+    width: 40px; }
+  #updateLightbox #updateStartingYear, #updateLightbox #updateEndingYear {
+    width: 50px; }
+
+#rightBlock {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px; }
+  #rightBlock img {
+    float: none !important;
+    margin-left: 0 !important; }
+  #rightBlock select, #rightBlock input {
+    display: block; }
+  #rightBlock select {
+    width: 100%; }
+  #rightBlock input {
+    margin-left: 0 !important; }
+
+.miniInfo {
+  width: 140px;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+  position: relative;
+  right: 65px;
+  z-index: 8; }
+  .miniInfo h4, .miniInfo p {
+    margin: 0; }
+
+#slider {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 50px);
+  margin: 0 25px; }
+
+.noUi-target {
+  border: 0; }
+
+.noUi-horizontal .noUi-handle {
+  top: -10px;
+  left: 0;
+  width: 5px; }
+
+.noUi-horizontal .noUi-handle:last-of-type {
+  left: -2px; }
+
+.noUi-horizontal .noUi-handle:before, .noUi-horizontal .noUi-handle:after {
+  content: none; }
+
+.noUi-base {
+  background-color: #FAF9F5; }
+
+.noUi-connect {
+  background-color: #52374D; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,510 @@
+$lightboxPadding: 15px;
+$lightboxBorder: 5px;
+$lightboxTopPos: 5%;
+$lightboxSideMargin: 5%;
+
+$dotColor: white;
+
+$miniInfoWidth: 140px;
+$miniInfoPadding: 5px;
+
+$endingDotColor: lightgreen;
+
+$loginWidth: 100px;
+
+$sidebarBlockPadding : 5px;
+
+$leftFormWidth : 50%;
+
+$sliderWidthReduc : 50px;
+
+// *** General *** //
+
+html {
+    height: 100%;
+}
+
+body {
+    margin:0;
+    height: 100%;
+    overflow-y: hidden; //for some reason there was some blank space added that made a vertical scrollbar appear
+    background-image: url('../img/library1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'PT Sans Caption', sans-serif;
+    font-family: 'Jura', sans-serif;
+}
+
+#blackCloak {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    margin: auto;
+    width: 70%;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.clear {
+    clear: both;
+}
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+    border: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+
+//Login
+#login {
+    background-image: url('../img/library2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    form {
+        width: 200px;
+        margin: auto;
+        margin-top: 23%;
+    }
+
+    label {
+        color: white;
+        font-weight: bold;
+        margin: auto;
+        width: 170px;
+    }
+
+    label:nth-of-type(2) {
+        margin-top: 20px;
+    }
+
+    input {
+        margin: auto;
+    }
+}
+
+#login input[type='submit'] {
+    margin: auto;
+    background-color: #3FB8AF;
+    padding: 5px 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+#error {
+    color: black;
+    background-color: white;
+    border: 2px red solid;
+    padding: 5px;
+    margin-top: 15px;
+    width: 200px;
+}
+
+// *** Sidebar *** //
+#sidebarBlock {
+    padding: $sidebarBlockPadding;
+    color: white;
+    display: inline-block;
+
+    h2 {
+        margin: 0;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px;
+    }
+}
+
+#listCat {
+    margin: auto;
+    list-style-type: none;
+    padding: 0;
+    display: none;
+    position: absolute;
+    z-index: 9;
+
+    li {
+        font-size: 20px;
+        padding-top: 15px;
+        border-bottom: 1px white dotted;
+        padding-right: 10px;
+    }
+
+    li:hover, .selected {
+        background-color: white;
+        border-bottom: 1px black dotted;
+        color: black;
+    }
+
+    .important:hover {
+        background-color: transparent;
+        border-bottom: 1px white dotted;
+        color: white;
+    }
+
+    .edit, .supp {
+        width: 20px;
+        position: absolute; 
+    }
+
+    .supp {
+        right: 5px;
+    }
+
+    input {
+        border: 1px solid black;
+        display: inline-block;
+        color: black;
+    }
+
+    p {
+        margin: 0;
+        display: inline-block;
+    }
+}
+
+#newCat {
+    img {
+        width: 20px;
+        margin-left: 10px;
+    }
+}
+
+// *** Main & Timelines *** //
+
+main {
+    width: unquote("calc(100% - #{$sliderWidthReduc})");
+    height: 100%;
+    margin: auto;
+}
+
+.timelineName{
+    position: absolute;
+    right: 0;
+    color: white;
+}
+
+.timeline {
+    height: 3px;
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.timeline:nth-child(odd){
+    background-color: rgb(102, 0, 51);
+}
+
+.timeline:nth-child(even){
+    background-color: rgb(204, 204, 0);
+}
+
+.dot, .endingDot {
+    border-radius: 100%;
+    background-color: $dotColor;
+    position: absolute;
+    bottom: -2.5px;
+}
+
+.endingDot {
+    border: lightgreen solid 3px;
+    width: 10px;
+    height: 10px;
+}
+
+.dot {
+    border: $dotColor solid 5px;
+    width: 0;
+}
+
+.periodLine {
+    border: 3px dotted $endingDotColor;
+    position: absolute;
+    z-index: 8;
+    bottom: -1.5px;
+}
+
+// Lightbox & addLightBox
+
+#addLightbox, #lightbox, #updateLightbox {
+    width: unquote("calc(100% - 2 * #{$lightboxSideMargin} - 2 * #{$lightboxPadding} - 2 * #{$lightboxBorder})");
+    height: unquote("calc(100% - 2 * #{$lightboxTopPos} - 2 * #{$lightboxPadding} - 2 * #{$lightboxBorder})");
+    padding: $lightboxPadding;
+    position: absolute;
+    top: $lightboxTopPos;
+    margin: 0 $lightboxSideMargin;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+#lightboxOverlay {
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: rgb(119, 119, 119);
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+// Lightbox & updateLightbox
+#lightbox, #updateLightbox {
+    background-color: black;
+    color: white;
+    border: $lightboxBorder solid white;
+
+    img {
+        float: right;
+        max-width: 250px;
+        margin-left: 15px;
+    }
+
+    button, input[type='submit'] {
+        color: white;
+        background-color: black;
+        text-decoration: none;
+        border: 1px solid white;
+        padding: 10px;
+        float: right;
+        margin-left: 10px;
+    }
+}
+
+// *** Lightbox *** //
+
+#lightbox {
+    text-align: justify;
+
+    h1 {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    p {
+        line-height: 30px;
+        font-size: 17px;
+    }
+}
+
+// *** Add *** //
+#addLightbox {
+    display: none;
+    background-color: white;
+    color: black;
+    border: $lightboxBorder solid black;
+
+    h1 {
+        text-align: center;
+        color: black;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form {
+        margin: auto;
+    }
+
+    textarea {
+        width: 100%;
+        display: block;
+    }
+
+    #insertStartingDay, #insertStartingMonth, #insertStartingYear, #insertEndingDay, #insertEndingMonth, #insertEndingYear {
+        display: inline-block;
+    }
+
+    #left label:nth-of-type(2), #right label:nth-of-type(1), #right label:nth-of-type(2) {
+        margin-top: 30px;
+    }
+
+    select {
+        margin: 0 20px;
+        border: 0;
+    }
+
+    #insertCategories {
+        margin: 0;
+        padding: 10px;
+        width: 250px;
+        height: 120px;
+    }
+
+    input, select {
+        border-bottom:  1px dashed grey;;
+    }
+
+    input[type='submit']{
+        background-color: #3FB8AF;
+        color: white;
+        padding: 8px;
+        width: 100px;
+        border: 0;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    textarea, #insertCategories {
+        border: 1px dashed grey;
+    }
+
+    #left {
+        float: left;
+        width: $leftFormWidth;
+    }
+
+    #right {
+        float: right;
+        width: 100% - $leftFormWidth - 5%;
+    }
+
+    #leftInnerBlock, #rightInnerBlock {
+        margin: auto;
+    }
+}
+
+#insertDtartingDateBlock, #insertEndingDateBlock {
+    input {
+        display: inline-block;
+    }
+}
+
+#startingDateBlock label:nth-of-type(1) {
+    margin-top: 0 !important;
+}
+
+// *** Modif *** //
+
+#addIcon {
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+
+// *** Update lightbox *** //
+#updateLightbox {
+    display: none;
+
+    input[type='file'] {
+        display: block;
+        margin-top : 15px;
+    }
+
+    #updateTitle {
+        font-size: 2em;
+        margin-bottom: 0.67em;
+        display: inline-block;
+    }
+
+    textarea {
+        padding: 10px;
+        padding-bottom: 0;
+    }
+
+    #dateSection input, select, p{
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    #updateStartingDay, #updateEndingDay{
+        width: 40px;
+    }
+
+    #updateStartingYear, #updateEndingYear {
+        width: 50px;
+    }
+}
+
+#rightBlock {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+
+    img {
+        float: none !important;
+        margin-left: 0 !important;
+    }
+    
+    select, input {
+        display: block;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    input {
+        margin-left: 0 !important;
+    }
+}
+
+
+// *** Mini Info *** //
+
+.miniInfo {
+    width: $miniInfoWidth;
+    border: 1px solid white;
+    color: white;
+    padding: $miniInfoPadding;
+    position: relative;
+    right: $miniInfoWidth / 2 - $miniInfoPadding;
+    z-index: 8;
+
+    h4, p {
+        margin: 0;
+    }
+}
+
+// *** Slider *** //
+
+#slider {
+    position: absolute;
+    bottom: 0;
+    width: unquote("calc(100% - #{$sliderWidthReduc})");
+    margin: 0 ($sliderWidthReduc / 2);
+}
+
+// overide of noUislider default style
+.noUi-target {
+    border: 0;
+}
+
+.noUi-horizontal .noUi-handle {
+    top: -10px;
+    left: 0;
+    width: 5px;
+}
+
+.noUi-horizontal .noUi-handle:last-of-type {
+    left: -2px;
+}
+
+.noUi-horizontal .noUi-handle:before, .noUi-horizontal .noUi-handle:after {
+    content: none;
+}
+
+.noUi-base {
+    background-color: #FAF9F5;
+}
+
+.noUi-connect {
+    background-color: #52374D;
+}
