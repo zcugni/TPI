@@ -2,11 +2,11 @@
 
 Final School Project (old school)
 
-Goal : interactivly represent historicals events on timeline.
+Goal : Interactivly represent historicals events on timeline.
 
 Installation :  
--Changer les variables de connexion de la base présente dans functions/dbCoConfig.php.  
--Importer les scripts sql de structure et données présent dans database. 
+-Change database connexion variable in functions/dbCoConfig.php.  
+-Import sql scripts. 
 
 -Login page admin:  
 admin@gmail.com <br>
