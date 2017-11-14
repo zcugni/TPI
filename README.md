@@ -9,5 +9,5 @@ Installation :
 -Importer les scripts sql de structure et données présent dans database
 
 -Login page admin:
-	admin@gmail.com
-	chronoview_demo
+admin@gmail.com
+chronoview_demo
